@@ -22,6 +22,7 @@ class StoryList {
 
   }
 
+  //user can add a story
   async addStory(user, newStory) {
     const response = await axios({
       method: "POST",
@@ -37,7 +38,7 @@ class StoryList {
      return newStory;
   }
 
-
+//user remoce specific story
 async removeStory(user, storyId){
   await axios({
     url: `${BASE_URL}/stories/${storyId}`,
@@ -53,7 +54,7 @@ async removeStory(user, storyId){
 }
 
 
-
+//user can update story
   async update(user, storyData) {
     const response = await axios({
       url: `${BASE_URL}/stories/${this.storyId}`,
