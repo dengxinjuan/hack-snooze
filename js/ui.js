@@ -36,6 +36,7 @@ let currentUser = null;
     $userProfile.show();
   }
 
+  //update userprofile section
  function updateUserProfile(){
 
    $("#profile-name").text(`Name: ${currentUser.name}`);
@@ -45,8 +46,6 @@ let currentUser = null;
   );
 
  }
-
-
 
 
   await checkIfLoggedIn();
@@ -124,6 +123,7 @@ let currentUser = null;
    * Event handler for Navigation to Homepage
    */
 
+   //show the all story list
   $("body").on("click", "#nav-all", async function() {
     hideElements();
     await generateStories();
@@ -175,7 +175,7 @@ let currentUser = null;
    * A rendering function to call the StoryList.getStories static method,
    *  which will generate a storyListInstance. Then render it.
    */
-
+// this is the function that update stories to storylist
   async function generateStories() {
     // get an instance of StoryList
     const storyListInstance = await StoryList.getStories();
@@ -194,6 +194,8 @@ let currentUser = null;
   /**
    * A function to render HTML for an individual Story instance
    */
+
+   //basic story HTML
 
   function generateStoryHTML(story,isOwnStory) {
     let hostName = getHostName(story.url);
@@ -220,8 +222,6 @@ let currentUser = null;
 
     return storyMarkup;
   }
-
-
 
 
 
@@ -423,7 +423,7 @@ $(".articles-container").on("click", ".star", async function(evt) {
 
  
 
-
+//get users favestories
   function generateFaves() {
 
     $favoritedStories.empty();
