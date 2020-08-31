@@ -81,6 +81,7 @@ let currentUser = null;
    *  If successfully we will setup a new user instance
    */
 
+
   $createAccountForm.on("submit", async function(evt) {
     evt.preventDefault(); // no page refresh
 

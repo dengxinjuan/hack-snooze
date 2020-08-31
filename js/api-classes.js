@@ -201,6 +201,20 @@ async deteleUser(){
     token: this.loginToken}})
 }
 
+
+//check user
+async checkUser(username){
+  let response = await axios({
+      url: `"https://private-anon-87ea4d1361-hackorsnoozev3.apiary-mock.com/users/${username}"`,
+      method: "GET",
+      data: {
+        token: this.loginToken
+      },
+    });
+if(!response){ alert("username not work")}
+}
+
+
 //add favorite
 async addFavorite(storyId) {
 
