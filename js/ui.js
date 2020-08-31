@@ -67,7 +67,9 @@ let currentUser = null;
     const password = $("#login-password").val();
 
     // call the login static method to build a user instance
+
     const userInstance = await User.login(username, password);
+    
     // set the global user to the user instance
     currentUser = userInstance;
     syncCurrentUserToLocalStorage();
