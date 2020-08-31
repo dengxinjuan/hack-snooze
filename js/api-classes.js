@@ -105,9 +105,11 @@ class User {
         password,
         name,
       }
-    });
-    
-    console.log(response.data.error);
+    })
+    .catch(err=>{ alert(err + " username taken")}); 
+    // alert signup error
+   // console.log(response.data);
+
     // build a new User instance from the API response
     const newUser = new User(response.data.user);
 
@@ -125,7 +127,9 @@ class User {
         username,
         password
       }
-    });
+    })
+    .catch(err=>{alert(err +"  username/password wrong")});
+    //alert username/password wrong
 
     // build a new User instance from the API response
     const existingUser = new User(response.data.user);
@@ -202,17 +206,6 @@ async deteleUser(){
 }
 
 
-//check user
-async checkUser(username){
-  let response = await axios({
-      url: `"https://private-anon-87ea4d1361-hackorsnoozev3.apiary-mock.com/users/${username}"`,
-      method: "GET",
-      data: {
-        token: this.loginToken
-      },
-    });
-if(!response){ alert("username not work")}
-}
 
 
 //add favorite
